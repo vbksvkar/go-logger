@@ -21,7 +21,7 @@ func FromContext(ctx context.Context) *zap.SugaredLogger {
 	return logger
 }
 
-func New(appName string, appVersion string) (*zap.SugaredLogger, error) {
+func CreateLogger(appName string, appVersion string) (*zap.SugaredLogger, error) {
 	logLevel := zap.NewAtomicLevelAt(zap.InfoLevel)
 	encoderConfig := zapcore.EncoderConfig{
 		MessageKey:     "message",
